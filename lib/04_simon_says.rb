@@ -19,8 +19,17 @@ def first_word(string)
 end
 
 def titleize(word)
-    # nocap = %w(and the a in or if) # %w() crée une array de mots séparé par espace
-    return word.titleize 
+    nocap = %w(and the a in or if) # %w() crée une array de mots séparé par espace
+    resultat = [] #création liste
+    array = word.split 
+    array.each.with_index do |word, index| 
+        if nocap.include?(word) && index != 0
+            resultat << word
+        else
+            resultat << word.capitalize
+        end
+    end
+    return resultat.join(" ")
 end
 
 

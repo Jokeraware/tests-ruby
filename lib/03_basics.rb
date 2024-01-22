@@ -1,7 +1,15 @@
-# def who_is_bigger(a,b,c)
-#     hash = [a, b, c]
-#     (&:nil)
-# end
+def who_is_bigger(a,b,c)
+    array = [a, b, c]
+    if array.include?(nil)
+        return "nil detected"
+    elsif a < c && b < c
+        return "c is bigger"
+    elsif a < b && b > c
+        return "b is bigger"
+    else
+        return "a is bigger"
+    end
+end
 
 def reverse_upcase_noLTA(string)
     return string.reverse.upcase.delete("LTA")
